@@ -4,7 +4,7 @@
 Summary: Driver dell_rbu.ko for DELL openmanage
 Name: dell-rbu-module
 Version: 4.19.0+1
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPLv2
 #Source: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/firmware/dell_rbu.c?h=v4.19.19
 #wget -O dell_rbu.c https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/firmware/dell_rbu.c?h=v4.19.19
@@ -53,6 +53,9 @@ find %{buildroot}/lib/modules/%{uname} -name "*.ko" -type f | xargs chmod u+x
 /lib/modules/%{uname}/*/*.ko
 
 %changelog
+* Fri Sep 16 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 4.19.0+1-3
+- Rebuild for XCP-ng 8.3
+
 * Tue Jun 30 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 4.19.0+1-2
 - Rebuild for XCP-ng 8.2
 
