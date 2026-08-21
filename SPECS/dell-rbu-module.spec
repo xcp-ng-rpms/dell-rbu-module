@@ -4,7 +4,10 @@
 Summary: Driver dell_rbu.ko for DELL openmanage
 Name: dell-rbu-module
 Version: 4.19.0+1
-Release: 3%{?dist}
+Release: 4%{?dist}
+# Built against new kABI after cip rebase
+Requires: xcpng-kernel-kabi = 4.19.325-cip134+
+
 License: GPLv2
 #Source: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/firmware/dell_rbu.c?h=v4.19.19
 #wget -O dell_rbu.c https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/firmware/dell_rbu.c?h=v4.19.19
@@ -18,7 +21,7 @@ Requires(post): /usr/sbin/depmod
 Requires(postun): /usr/sbin/depmod
 
 %description
-dell_rbu Linux Device Driver for DELL systems. 
+dell_rbu Linux Device Driver for DELL systems.
 It is needed to start & use openmanage related services.
 
 %prep
@@ -53,6 +56,9 @@ find %{buildroot}/lib/modules/%{uname} -name "*.ko" -type f | xargs chmod u+x
 /lib/modules/%{uname}/*/*.ko
 
 %changelog
+* Mon Aug 31 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 4.19.0+1-4
+- Rebuild for kernel v4.19.325-cip134
+
 * Fri Sep 16 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 4.19.0+1-3
 - Rebuild for XCP-ng 8.3
 
