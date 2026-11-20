@@ -4,7 +4,7 @@
 Summary: Driver dell_rbu.ko for DELL openmanage
 Name: dell-rbu-module
 Version: 4.19.0+1
-Release: 3.0.kernelpreview.1%{?dist}
+Release: 3.0.kernelpreview.1.0.testv0.1%{?dist}
 License: GPLv2
 #Source: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/firmware/dell_rbu.c?h=v4.19.19
 #wget -O dell_rbu.c https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/firmware/dell_rbu.c?h=v4.19.19
